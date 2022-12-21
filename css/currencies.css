@@ -1,0 +1,8 @@
+.currency-bold{
+    font-weight: bold;
+}
+
+.currency-shadow{
+    font-weight: bold;
+    text-shadow: 0 0 5px currentColor;
+}

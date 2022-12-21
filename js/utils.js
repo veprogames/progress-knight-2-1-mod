@@ -35,6 +35,9 @@ function format(number, decimals = 1) {
 
 function formatCoins(coins, element) {
     const money2 = [
+        { "name": " 𒀱", "color": "#ffffff", "value": 1e47, "class": "currency-shadow" },
+        { "name": " 𒇫", "color": "#66ccff", "value": 1e41, "class": "currency-shadow" },
+        { "name": "⯚", "color": "#00ff00", "value": 1e35, "class": "currency-bold" },
         { "name": "✹", "color": "#ffffcc", "value": 1e30 },
         { "name": "∰", "color": "#ff0083", "value": 1e26 },
         { "name": "𐙋", "color": "#27b897", "value": 1e23 },
@@ -63,6 +66,7 @@ function formatCoins(coins, element) {
         if ((amount > 0 || m.name == "c")) {
             element.children[c].textContent = format(amount, amount < 1000 ? 0 : 1) + m.name
             element.children[c].style.color = m.color
+            element.children[c].className = m.class ? m.class : "";
             c++
         }
         if(c >= 2 || amount >= 100) break;
