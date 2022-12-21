@@ -35,18 +35,19 @@ function format(number, decimals = 1) {
 
 function formatCoins(coins, element) {
     const money2 = [
+        { "name": " 𒀱", "color": "#ffffff", "value": 1e62, "class": "currency-shadow-rainbow" },
         { "name": " 𒀱", "color": "#ffffff", "value": 1e47, "class": "currency-shadow" },
-        { "name": " 𒇫", "color": "#66ccff", "value": 1e41, "class": "currency-shadow" },
+        { "name": " 𒇫", "color": "#66ccff", "value": 1e41, "class": "currency-bold" },
         { "name": "⯚", "color": "#00ff00", "value": 1e35, "class": "currency-bold" },
-        { "name": "✹", "color": "#ffffcc", "value": 1e30 },
+        { "name": "✹", "color": "#ffffcc", "value": 1e29 },
         { "name": "∰", "color": "#ff0083", "value": 1e26 },
         { "name": "𐙋", "color": "#27b897", "value": 1e23 },
         { "name": "𐅍", "color": "#cd72ff", "value": 1e20 },
         { "name": "Δ", "color": "#f5c211", "value": 1e17 },
         { "name": "d", "color": "#ffffff", "value": 1e14 },
         { "name": "r", "color": "#ed333b", "value": 1e12 },
-        { "name": "S", "color": "#6666ff", "value": 1e10 },
-        { "name": "e", "color": "#2ec27e", "value": 1e8 },
+        { "name": "e", "color": "#2ec27e", "value": 1e10 },
+        { "name": "a", "color": "#e066ff", "value": 1e8 },
         { "name": "p", "color": "#79b9c7", "value": 1e6 },
         { "name": "g", "color": "#E5C100", "value": 10000 },
         { "name": "s", "color": "#a8a8a8", "value": 100 },
@@ -57,13 +58,17 @@ function formatCoins(coins, element) {
     for(const c of element.children){
         c.textContent = "";
     }
+    if(coins <= 0){
+        element.children[0].textContent = "Free";
+        element.children[0].style.color = "#00ff00";
+    }
     let c = 0
     for (let i = 0; i < money2.length; i++) {
         const m = money2[i];
         const prev = money2[i - 1];
         const diff = prev ? prev.value / m.value : Infinity;
         const amount = Math.floor(coins / m.value) % diff;
-        if ((amount > 0 || m.name == "c")) {
+        if (amount > 0) {
             element.children[c].textContent = format(amount, amount < 1000 ? 0 : 1) + m.name
             element.children[c].style.color = m.color
             element.children[c].className = m.class ? m.class : "";

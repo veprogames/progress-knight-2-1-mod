@@ -2,6 +2,7 @@ version 2.1.Δ / 21.12.2022
 * Add more currencies beyond platinum (cosmetic)
 * Buff Essence Milestone 7 & 9
 * Buff 4th challenge reward
+* Heroic Milestones can boost Essence gain
 
 version 2.1.17 / 18.12.2022
 * Add a fifth challenge and rework the previous ones
