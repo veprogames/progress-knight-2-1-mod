@@ -707,8 +707,9 @@ function setCustomEffects() {
         // some milestones should give more essence multi
         if(gameData.essence > 50e6) mult *= 1.4;
         if(gameData.essence > 100e6) mult *= 1.4;
-        if(gameData.essence > 300e6) mult *= 1.5;
+        if(gameData.essence > 200e6) mult *= 2;
         if(gameData.essence > 500e6) mult *= 2;
+        if(gameData.essence > 750e6) mult *= 2;
 
         return mult
     }

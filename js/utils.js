@@ -35,6 +35,7 @@ function format(number, decimals = 1) {
 
 function formatCoins(coins, element) {
     const money2 = [
+        { "name": " 𒀱", "color": "#ffffff", "value": 1e62, "class": "currency-shadow-rainbow" },
         { "name": " 𒀱", "color": "#ffffff", "value": 1e47, "class": "currency-shadow" },
         { "name": " 𒇫", "color": "#66ccff", "value": 1e41, "class": "currency-bold" },
         { "name": "⯚", "color": "#00ff00", "value": 1e35, "class": "currency-bold" },
@@ -56,6 +57,10 @@ function formatCoins(coins, element) {
 
     for(const c of element.children){
         c.textContent = "";
+    }
+    if(coins <= 0){
+        element.children[0].textContent = "Free";
+        element.children[0].style.color = "#00ff00";
     }
     let c = 0
     for (let i = 0; i < money2.length; i++) {
