@@ -40,22 +40,31 @@ function formatCoins(coins, element) {
     const copper = Math.floor(coins - platina * 1e6 - gold * 1e4 - silver * 100)
 
     const money = {
-        "p": { "color": "#79b9c7", "showbefore": null, "value": platina },
-        "g": { "color": "#E5C100", "showbefore": 1e8, "value": gold },
-        "s": { "color": "#a8a8a8", "showbefore": 1e6, "value": silver },
-        "c": { "color": "#a15c2f", "showbefore": 1e4, "value": copper },
+        "p": { "color": "#79b9c7", "value": platina },
+        "g": { "color": "#E5C100", "value": gold },
+        "s": { "color": "#a8a8a8", "value": silver },
+        "c": { "color": "#a15c2f", "value": copper },
     }
+
+    /*const money2 = [
+        { "name": "p", "color": "#79b9c7", "value": 1e6 },
+        { "name": "g", "color": "#E5C100", "value": 10000 },
+        { "name": "s", "color": "#a8a8a8", "value": 100 },
+        { "name": "c", "color": "#a15c2f", "value": 1 },
+    ];*/
 
     let i = 0
     for (const key in money) {
-        if ((money[key].showbefore == null || coins < money[key].showbefore) && (money[key].value > 0 || money[key].value == 0 && key == "c" && coins >= 0)) {
-            element.children[i].textContent = format(money[key].value, money[key].value < 1000 ? 0 : 1) + key
-            element.children[i].style.color = money[key].color
+        if(i >= 2) break;
+        const m = money[key];
+        if ((m.value > 0 || key == "c")) {
+            element.children[i].textContent = format(m.value, m.value < 1000 ? 0 : 1) + key
+            element.children[i].style.color = m.color
+            i++
         }
         else {
             element.children[i].textContent = ""            
         }
-        i++
     }
 }
 
