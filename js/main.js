@@ -704,6 +704,12 @@ function setCustomEffects() {
             mult = 1 + 6 * countHeroes / 74
         }
 
+        // some milestones should give more essence multi
+        if(gameData.essence > 50e6) mult *= 1.4;
+        if(gameData.essence > 100e6) mult *= 1.4;
+        if(gameData.essence > 300e6) mult *= 1.5;
+        if(gameData.essence > 500e6) mult *= 2;
+
         return mult
     }
 }
