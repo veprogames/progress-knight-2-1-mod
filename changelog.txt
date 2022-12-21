@@ -1,3 +1,8 @@
+version 2.1.Δ / 21.12.2022
+* Add more currencies
+* Buff "Faint Hope"
+* Buff 4th challenge
+
 version 2.1.17 / 18.12.2022
 * Add a fifth challenge and rework the previous ones
 * Fix a few spelling mistakes

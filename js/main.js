@@ -685,11 +685,8 @@ function setCustomEffects() {
     faintHope.getEffect = function () {
         var mult = 1
         if (gameData.requirements["Faint Hope"].isCompleted()) {
-            let kickin = 1.1754 - 0.082 * Math.log(gameData.realtime)
-            if (kickin < 0.15)
-                kickin = 0.15
             mult = 1 + 0.005 * (gameData.realtime * getCompletedGameSpeedBoost())
-            mult = mult ** 1.4;
+            mult = mult ** 1.5;
         }
 
         return mult
