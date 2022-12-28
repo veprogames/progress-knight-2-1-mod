@@ -1593,7 +1593,7 @@ gameData.requirements = {
     "Nova": new TaskRequirement([getTaskElement("Nova")], [{ task: "Eternal Wanderer", requirement: 15 }, { task: "Cosmic Longevity", requirement: 4000, herequirement: 180 }]),
     "Sigma Proioxis": new TaskRequirement([getTaskElement("Sigma Proioxis")], [{ task: "Nova", requirement: 200 }, { task: "Cosmic Recollection", requirement: 4500, herequirement: 350 }]),
     "Acallaris": new TaskRequirement([getTaskElement("Acallaris")], [{ task: "Galactic Command", requirement: 5000, herequirement: 250 }, { task: "Sigma Proioxis", requirement: 1000, herequirement: 480 }]),
-    "One Above All": new TaskRequirement([getTaskElement("One Above All")], [{ task: "Meditation", requirement: 6300 }, { task: "Acallaris", requirement: 1400, herequirement: 500 }]),	
+    "One Above All": new TaskRequirement([getTaskElement("One Above All")], [{ task: "Meditation", requirement: 6300 }, { task: "Acallaris", requirement: 1400, herequirement: 495 }]),	
 
     //Fundamentals
     "Concentration": new TaskRequirement([getTaskElement("Concentration")], []),
