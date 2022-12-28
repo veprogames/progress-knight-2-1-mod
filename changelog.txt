@@ -1,3 +1,6 @@
+version 2.1.Δ-2 / 28.12.2022
+* Great One Above all Requirement lowered
+
 version 2.1.Δ / 21.12.2022
 * Add more currencies beyond platinum (cosmetic)
 * Buff Essence Milestone 7 & 9
